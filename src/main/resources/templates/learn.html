@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="module" src="textTranslator.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,61 +50,57 @@
 </div>
 
 
-<script>
-    let form = document.getElementById('search-input');
-    let imagelocation = document.getElementById('imageContainer');
-    let arrayOfChildren = [];
-    function showWord(word) {
-        const images = document.querySelectorAll('.image');
+<!--<script>-->
+<!--    let form = document.getElementById('search-input');-->
+<!--    let imagelocation = document.getElementById('imageContainer');-->
+<!--    let arrayOfChildren = [];-->
+<!--    // let symbolsInfoJSON = getJsonSymbols().then(response => response.value);-->
+<!--    // console.log(symbolsInfoJSON);-->
+<!--    // async function getJsonSymbols(){-->
+<!--    //     let value =  await fetch('texts.json')-->
+<!--    //         .then(response => response.json())-->
+<!--    //         .catch(error => console.error('Error fetching JSON:', error));-->
+<!--    //     return value;-->
+<!--    // }-->
+<!--    //Pair Programmed by Ryan B and Robbie-->
+<!--    async function Submit(event) {-->
+<!--        event.preventDefault();-->
+<!--        arrayOfChildren.forEach((element)=>{-->
+<!--            element.remove();-->
+<!--        });-->
+<!--        arrayOfChildren = [];//empty array-->
+<!--        let input = document.getElementById('lname').value;-->
 
-        images.forEach(img => img.style.display = 'none');
+<!--        input.toUpperCase();-->
+<!--        console.log(input);-->
+<!--        const words = input.split(' ');-->
 
-        const wordUpper = word.toUpperCase();
-
-        for (let char of wordUpper) {
-            const img = document.getElementById(char);
-            if (img) { // Check if the image exists
-                img.style.display = 'inline'; // Change to 'block' if each image should be on a new line
-            }
-        }
-    }
-
-    //Pair Programmed by Ryan B and Robbie
-    function Submit(event) {
-        event.preventDefault();
-        arrayOfChildren.forEach((element)=>{
-            element.remove();
-        });
-        arrayOfChildren = [];//empty array
-        const input = document.getElementById('lname').value.toUpperCase();
-        console.log(input);
-        const words = input.split(' ');
-
-        words.map((word, index)=>{
-            word.split('').forEach((letter)=>{
-                let newImage = document.createElement("img");
-                newImage.setAttribute("src",`${letter}.png`);
-                imagelocation.appendChild(newImage);
-                arrayOfChildren.push(newImage);
-            });
-        //add in space
-            if(index < (words.length-1)){
-                let newSpace = document.createElement("br");
-                let titleNewWord = document.createElement("h2");
-                titleNewWord.textContent = "New Word:";
+<!--        words.map((word, index)=>{-->
+<!--            word.split('').forEach((letter)=>{-->
+<!--                let newImage = document.createElement("img");-->
+<!--                newImage.setAttribute("src",`${letter}.png`);-->
+<!--                newImage.setAttribute("alt", symbolsInfoJSON[letter]["description"]);-->
+<!--                imagelocation.appendChild(newImage);-->
+<!--                arrayOfChildren.push(newImage);-->
+<!--            });-->
+<!--        //add in space-->
+<!--            if(index < (words.length-1)){-->
+<!--                let newSpace = document.createElement("br");-->
+<!--                let titleNewWord = document.createElement("h2");-->
+<!--                titleNewWord.textContent = "New Word:";-->
 
 
-                imagelocation.appendChild(newSpace);
-                imagelocation.appendChild(titleNewWord);
+<!--                imagelocation.appendChild(newSpace);-->
+<!--                imagelocation.appendChild(titleNewWord);-->
 
-                arrayOfChildren.push(newSpace);
-                arrayOfChildren.push(titleNewWord);
-            }
-        });
-        // showWord(input);
-    }
+<!--                arrayOfChildren.push(newSpace);-->
+<!--                arrayOfChildren.push(titleNewWord);-->
+<!--            }-->
+<!--        });-->
+<!--        // showWord(input);-->
+<!--    }-->
 
-    form.addEventListener('submit', Submit);
-</script>
+<!--    form.addEventListener('submit', Submit);-->
+<!--</script>-->
 </body>
 </html>
