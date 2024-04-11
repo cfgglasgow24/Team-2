@@ -126,7 +126,7 @@ async function Submit(event) {
     words.map((word, index)=>{
         word.split('').forEach((letter)=>{
             let newImage = document.createElement("img");
-            newImage.setAttribute("src",`${letter}.png`);
+            newImage.setAttribute("src",`${letter.toUpperCase()}.png`);
             let letterInfo = deafBlindInfo[letter.toUpperCase()]["description"];
             newImage.setAttribute("alt", letterInfo);
             imagelocation.appendChild(newImage);
