@@ -82,11 +82,28 @@
         arrayOfChildren = [];//empty array
         const input = document.getElementById('lname').value;
         console.log(input);
-        input.map((letter)=>{
-            let newImage = document.createElement("img");
-            newImage.setAttribute("src",`${letter}.png`);
-            imagelocation.appendChild(newImage);
-            arrayOfChildren.push(newImage);
+        const words = input.split(' ');
+
+        words.map((word, index)=>{
+            word.split('').forEach((letter)=>{
+                let newImage = document.createElement("img");
+                newImage.setAttribute("src",`${letter}.png`);
+                imagelocation.appendChild(newImage);
+                arrayOfChildren.push(newImage);
+            });
+        //add in space
+            if(index < (words.length-1)){
+                let newSpace = document.createElement("br");
+                let titleNewWord = document.createElement("h2");
+                titleNewWord.textContent = "New Word:";
+
+
+                imagelocation.appendChild(newSpace);
+                imagelocation.appendChild(titleNewWord);
+
+                arrayOfChildren.push(newSpace);
+                arrayOfChildren.push(titleNewWord);
+            }
         });
         // showWord(input);
     }
