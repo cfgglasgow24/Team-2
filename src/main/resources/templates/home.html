@@ -17,7 +17,7 @@
 <nav class="navbar navbar-expand-lg navbar-light my-navbar">
     <div class="container-fluid">
         <a class="navbar-brand" th:href="@{/home}">
-            <img src="images/logo.svg" alt="" width="40" height="8"  class="d-inline-block align-text-top">
+            <img src="logo.png" alt="" width="40" height="8"  class="d-inline-block align-text-top">
             Deafblind Scotland
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,11 +48,11 @@
             <h2>National charity for people with dual sensory loss.</h2>
             <br>
             <button class="btn btn-dark my-custom-buttond">
-                <a href="signup.html" class="text-decoration-none text-white">Get Started</a>
+                <a th:href="@{/learn}" class="text-decoration-none text-white">Get Started</a>
             </button>
         </div>
         <div class="col-lg-6 d-none d-lg-block">
-            <img src="images/hero.png" class="img-fluid" alt="Hero Image">
+            <img src="logo.png" class="img-fluid" alt="Hero Image">
         </div>
     </div>
 </div>
