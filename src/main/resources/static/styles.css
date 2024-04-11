@@ -11,6 +11,30 @@
     --font-size-massive: 2rem; 
 }
 
+.s {
+    font-size:  --font-size-small;
+}
+
+.d{
+    font-size: var(--font-size-default)
+}
+.l{
+    font-size: var(--font-size-large)
+}
+.h{
+    font-size: var(--font-size-huge)
+}
+.m{
+    font-size: var(--font-size-massive)
+}
+
+ul {
+  list-style-type: none; /* Removes bullet points */
+  margin: 0; /* Removes the default margin */
+  padding: 0; /* Removes the default padding */
+}
+
+
 body {
     font-size: var(--font-size-default); 
 }
