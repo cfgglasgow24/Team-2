@@ -3,6 +3,12 @@
   --color-bg-light: #ffffff;
   --color-text-dark: #ead4d4;
   --color-bg-dark: #000000;
+
+   --font-size-small: 0.75rem;
+  --font-size-default: 1rem; 
+  --font-size-large: 1.25rem;
+  --font-size-huge: 1.5rem; 
+  --font-size-massive: 2rem; 
 }
 
 body {
@@ -43,4 +49,14 @@ h1, h2 {
 .light-theme {
   --color-text-dark: #000000;
   --color-bg-dark: #ffffff;
+}
+
+
+body {
+  font-size: var(--font-size-default); 
+}
+
+
+h1 {
+  font-size: calc(var(--font-size-default) * 2);
 }
