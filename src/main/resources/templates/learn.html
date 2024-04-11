@@ -5,9 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .img{
+            display:none;
+            width:auto;
+
+        }
+    </style>
 </head>
-<body>Learn Page</h>
-<script src="index.js"></script>
+<body>
+<h1>Learn Page</h1>
+<form id = "search-input" action="">
+    <label for="lname">Type Word</label><br>
+    <input type="text" id="lname" name="lname" value="Hello">
+    <input type="submit" value="Submit">
+</form>
+
+
+
+<div id="imageContainer">
+<!--    <img src="A.png" alt="A" class="image" id="A">-->
+<!--    <img src="B.png" alt="B" class="image" id="B">-->
+<!--    <img src="C.png" alt="C" class="image" id="C">-->
+<!--    <img src="D.png" alt="D" class="image" id="D">-->
+<!--    <img src="E.png" alt="E" class="image" id="E">-->
+<!--    <img src="F.png" alt="F" class="image" id="F">-->
+<!--    <img src="G.png" alt="G" class="image" id="G">-->
+<!--    <img src="H.png" alt="H" class="image" id="H">-->
+<!--    <img src="I.png" alt="I" class="image" id="I">-->
+<!--    <img src="J.png" alt="J" class="image" id="J">-->
+<!--    <img src="K.png" alt="K" class="image" id="K">-->
+<!--    <img src="L.png" alt="L" class="image" id="L">-->
+<!--    <img src="M.png" alt="M" class="image" id="M">-->
+<!--    <img src="N.png" alt="N" class="image" id="N">-->
+<!--    <img src="O.png" alt="O" class="image" id="O">-->
+<!--    <img src="P.png" alt="P" class="image" id="P">-->
+<!--    <img src="Q.png" alt="Q" class="image" id="Q">-->
+<!--    <img src="R.png" alt="R" class="image" id="R">-->
+<!--    <img src="S.png" alt="S" class="image" id="S">-->
+<!--    <img src="T.png" alt="T" class="image" id="T">-->
+<!--    <img src="U.png" alt="U" class="image" id="U">-->
+<!--    <img src="V.png" alt="V" class="image" id="V">-->
+<!--    <img src="W.png" alt="W" class="image" id="W">-->
+<!--    <img src="X.png" alt="X" class="image" id="X">-->
+<!--    <img src="Y.png" alt="Y" class="image" id="Y">-->
+<!--    <img src="Z.png" alt="Z" class="image" id="Z">-->
+
+</div>
+
+
+<script>
+    let form = document.getElementById('search-input');
+    let imagelocation = document.getElementById('imageContainer');
+    let arrayOfChildren = [];
+    function showWord(word) {
+        const images = document.querySelectorAll('.image');
+
+        images.forEach(img => img.style.display = 'none');
+
+        const wordUpper = word.toUpperCase();
+
+        for (let char of wordUpper) {
+            const img = document.getElementById(char);
+            if (img) { // Check if the image exists
+                img.style.display = 'inline'; // Change to 'block' if each image should be on a new line
+            }
+        }
+    }
+
+    //Pair Programmed by Ryan B and Robbie
+    function Submit(event) {
+        event.preventDefault();
+        arrayOfChildren.forEach((element)=>{
+            element.remove();
+        });
+        arrayOfChildren = [];//empty array
+        const input = document.getElementById('lname').value;
+        console.log(input);
+        input.map((letter)=>{
+            let newImage = document.createElement("img");
+            newImage.setAttribute("src",`${letter}.png`);
+            imagelocation.appendChild(newImage);
+            arrayOfChildren.push(newImage);
+        });
+        // showWord(input);
+    }
+
+    form.addEventListener('submit', Submit);
+</script>
 </body>
 </html>
