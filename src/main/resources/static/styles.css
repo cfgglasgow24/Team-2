@@ -1,0 +1,46 @@
+:root {
+  --color-text-light: #ead4d4;
+  --color-bg-light: #ffffff;
+  --color-text-dark: #ead4d4;
+  --color-bg-dark: #000000;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 250;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-dark);
+}
+
+h1, h2 {
+  font-family: var(--font-primary);
+  color: inherit;
+}
+
+.btn {
+  border-radius: 50px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn--primary {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+.light-mode {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+
+.btn--secondary {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-text-dark);
+}
+
+.light-theme {
+  --color-text-dark: #000000;
+  --color-bg-dark: #ffffff;
+}
