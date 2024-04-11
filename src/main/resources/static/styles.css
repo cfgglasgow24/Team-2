@@ -1,0 +1,91 @@
+:root {
+    --dark-primary: #ffffff;
+    --bright-green: #176985;
+    --brighter-green: #1a7b99;
+    --text-colour: #61666a;
+}
+body {
+    background: #f5f7f8;
+}
+
+body .my-navbar {
+    background: #001213;
+}
+
+.my-navbar .navbar-brand {
+    color: var(--dark-primary);
+    font-size:  2rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    padding-top: 0%;
+}
+
+.navbar-brand img{
+    width: 50px;
+    height: 1.5em;
+    margin-top: -0.2em; /* Adjust this value as needed */
+}
+
+.my-navbar .nav-link {
+    color: var(--text-colour);
+}
+
+
+.my-navbar .nav-link.active {
+    color: var(--text-colour);
+}
+
+.col-lg-6.d-none.d-lg-block {
+    padding-top: 10%;
+}
+
+.my-custom-button {
+    /* Add your custom styles here */
+    background-color: var(--bright-green);
+    border-color: var(--brighter-green);
+    border-radius: 35px; /* Adjust this value as needed */
+}
+
+.my-custom-buttond {
+    /* Add your custom styles here */
+    background-color: var(--bright-green);
+    border-color: var(--bright-green);
+    border-radius: 35px; /* Adjust this value as needed */
+}
+
+.my-custom-button:hover {
+    background-color: var(--brighter-green) !important; /* Replace with the color you want */
+}
+
+.my-custom-buttond:hover {
+    background-color: var(--bright-green);
+    border-color: var(--brighter-green);
+}
+
+h1 {
+    color: var(--text-colour);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--text-colour);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23CBF2D9' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.form-control {
+    background-color: var(--dark-primary);
+    color: var(--text-colour);
+    border-color: var(--dark-primary);
+}
+
+.form-control:focus {
+    background-color: var(--dark-primary);
+    color: var(--text-colour);
+    border-color: var(--text-colour);
+}
